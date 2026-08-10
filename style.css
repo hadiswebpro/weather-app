@@ -1,0 +1,582 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+    color: #ffffff;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+
+    transition:
+        background-image 0.6s ease,
+        color 0.4s ease;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   BACKGROUND OVERLAY
+======================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(20, 30, 40, 0.38);
+
+    z-index: -1;
+}
+
+
+/* ========================================
+   WEATHER THEMES
+======================================== */
+
+
+/* ---------- DEFAULT ---------- */
+
+.weather-default {
+    --primary: #8ea8bd;
+    --secondary: #667b8c;
+
+    --search-bg: rgba(120, 145, 160, 0.45);
+
+    --info-bg: rgba(70, 90, 105, 0.52);
+
+    --item-bg: rgba(100, 120, 135, 0.52);
+
+    --item-border: rgba(210, 225, 235, 0.2);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/default.jpg");
+}
+
+
+/* ---------- SUNNY ---------- */
+
+.weather-sunny {
+    --primary: #e9ad3b;
+    --secondary: #d28d27;
+
+    --search-bg: rgba(210, 160, 55, 0.42);
+
+    --info-bg: rgba(150, 110, 45, 0.5);
+
+    --item-bg: rgba(195, 145, 55, 0.45);
+
+    --item-border: rgba(255, 230, 165, 0.3);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/sunny.jpg");
+}
+
+
+/* ---------- CLOUDY ---------- */
+
+.weather-cloudy {
+    --primary: #8298a8;
+    --secondary: #647a89;
+
+    --search-bg: rgba(115, 135, 150, 0.48);
+
+    --info-bg: rgba(70, 85, 100, 0.54);
+
+    --item-bg: rgba(100, 120, 135, 0.5);
+
+    --item-border: rgba(220, 230, 235, 0.2);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/cloudy.jpg");
+}
+
+
+/* ---------- RAINY ---------- */
+
+.weather-rainy {
+    --primary: #3f8bb5;
+    --secondary: #2e6685;
+
+    --search-bg: rgba(55, 100, 130, 0.5);
+
+    --info-bg: rgba(35, 65, 85, 0.6);
+
+    --item-bg: rgba(50, 90, 115, 0.58);
+
+    --item-border: rgba(155, 205, 230, 0.22);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/rainy.jpg");
+}
+
+
+/* ---------- FOGGY ---------- */
+
+.weather-foggy {
+    --primary: #9da9b0;
+    --secondary: #78858d;
+
+    --search-bg: rgba(140, 150, 155, 0.5);
+
+    --info-bg: rgba(90, 100, 105, 0.55);
+
+    --item-bg: rgba(120, 130, 135, 0.5);
+
+    --item-border: rgba(230, 235, 238, 0.25);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/foggy.jpg");
+}
+
+
+/* ---------- SNOWY ---------- */
+
+.weather-snowy {
+    --primary: #82c3df;
+    --secondary: #62a7c5;
+
+    --search-bg: rgba(125, 180, 200, 0.5);
+
+    --info-bg: rgba(75, 125, 145, 0.5);
+
+    --item-bg: rgba(105, 160, 180, 0.5);
+
+    --item-border: rgba(220, 245, 255, 0.35);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/snowy.jpg");
+}
+
+
+/* ---------- THUNDERSTORM ---------- */
+
+.weather-thunderstorm {
+    --primary: #7168a5;
+    --secondary: #504878;
+
+    --search-bg: rgba(80, 70, 115, 0.55);
+
+    --info-bg: rgba(45, 40, 70, 0.64);
+
+    --item-bg: rgba(65, 60, 100, 0.58);
+
+    --item-border: rgba(180, 170, 230, 0.25);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/thunderstorm.jpg");
+}
+
+
+/* ---------- NIGHT ---------- */
+
+.weather-night {
+    --primary: #6579c0;
+    --secondary: #485b98;
+
+    --search-bg: rgba(40, 55, 95, 0.6);
+
+    --info-bg: rgba(25, 35, 65, 0.7);
+
+    --item-bg: rgba(40, 50, 85, 0.65);
+
+    --item-border: rgba(145, 165, 225, 0.22);
+
+    --text-main: #ffffff;
+
+    background-image:
+        url("./assets/weather/night.jpg");
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+    width: min(90%, 700px);
+
+    margin: 0 auto;
+
+    padding: 3.5rem 0;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+h2 {
+    text-align: center;
+
+    margin-bottom: 8rem;
+
+    font-size: clamp(2.5rem, 7vw, 4rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+
+    color: var(--text-main);
+
+    text-shadow:
+        0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+
+.search-box {
+    display: flex;
+
+    gap: 0.7rem;
+
+    padding: 0.45rem;
+
+    background: var(--search-bg);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* ========================================
+   SEARCH INPUT
+======================================== */
+
+.search-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    padding: 0.9rem 1rem;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #222222;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+}
+
+
+.search-box input::placeholder {
+    color: #777777;
+}
+
+
+/* ========================================
+   SEARCH BUTTON
+======================================== */
+
+.search-box button {
+    flex-shrink: 0;
+
+    border: none;
+
+    padding: 0.9rem 1.25rem;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.4s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.search-box button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   INFO BOX
+======================================== */
+
+.info-box {
+    margin-top: 1.2rem;
+
+    padding: 1.3rem;
+
+    background: var(--info-bg);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* ========================================
+   CITY + TEMPERATURE
+======================================== */
+
+.city-temperature {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-bottom: 1.2rem;
+
+    padding: 1rem 1.2rem;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* CITY */
+
+.city-name {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+
+    font-weight: 700;
+}
+
+
+/* TEMPERATURE */
+
+.temperature {
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   WEATHER LIST
+======================================== */
+
+#info {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0.8rem;
+}
+
+
+/* ========================================
+   WEATHER ITEMS
+======================================== */
+
+#info li {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 0.7rem;
+
+    padding: 0.9rem 1rem;
+
+    background: var(--item-bg);
+
+    border: 1px solid var(--item-border);
+
+    border-radius: 14px;
+
+    color: var(--text-main);
+
+    font-size: 0.9rem;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background 0.4s ease,
+        transform 0.2s ease;
+}
+
+
+#info li:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 700px) {
+
+    main {
+        width: min(92%, 600px);
+
+        padding: 2.5rem 0;
+    }
+
+
+    #info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    main {
+        width: 92%;
+
+        padding: 1.8rem 0;
+    }
+
+
+    h2 {
+        margin-bottom: 2rem;
+
+        font-size: 2.2rem;
+    }
+
+
+    .search-box {
+        gap: 0.5rem;
+
+        padding: 0.35rem;
+    }
+
+
+    .search-box input {
+        padding: 0.75rem;
+
+        font-size: 0.85rem;
+    }
+
+
+    .search-box button {
+        padding: 0.75rem 0.9rem;
+
+        font-size: 0.8rem;
+    }
+
+
+    .info-box {
+        margin-top: 1rem;
+
+        padding: 0.9rem;
+
+        border-radius: 18px;
+    }
+
+
+    .city-temperature {
+        gap: 0.6rem;
+
+        padding: 0.8rem;
+
+        margin-bottom: 0.8rem;
+    }
+
+
+    .city-name {
+        font-size: 1.35rem;
+    }
+
+
+    .temperature {
+        font-size: 1.55rem;
+    }
+
+
+    #info {
+        gap: 0.6rem;
+    }
+
+
+    #info li {
+        padding: 0.8rem;
+
+        font-size: 0.82rem;
+    }
+
+}
