@@ -20,6 +20,13 @@ const weatherClasses = [
     "weather-thunderstorm"
 ];
 
+//const isLocal =
+  //  location.hostname === "localhost" ||
+  //  location.hostname === "127.0.0.1";
+
+//const API_URL = isLocal
+  //  ? "https://weather-app-secure.hibech804.workers.dev/weather"
+   // : "/weather";
 
 async function searchWeather() {
 
@@ -30,7 +37,9 @@ async function searchWeather() {
     }
 
 
-    const url =`/weather?city=${encodeURIComponent(city)}`;
+    const url =
+    `${API_URL}?city=${encodeURIComponent(city)}`;
+    //const url =`/weather?city=${encodeURIComponent(city)}`;
 
     info.innerHTML = `
     <li class="loading-message">
@@ -182,7 +191,7 @@ function changeWeatherTheme(condition) {
 function changeDayNight(sunrise, sunset) {
 
     const now = Math.floor(Date.now() / 1000);
-    document.body.classList.remove("day", "night");
+    document.body.classList.remove("day", "night", "error");
 
 
     if (now >= sunrise && now < sunset) {
