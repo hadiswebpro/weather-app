@@ -17,7 +17,8 @@ const weatherClasses = [
     "weather-rainy",
     "weather-foggy",
     "weather-snowy",
-    "weather-thunderstorm"
+    "weather-thunderstorm",
+    "weather-error"
 ];
 
 //const isLocal =
@@ -191,7 +192,7 @@ function changeWeatherTheme(condition) {
 function changeDayNight(sunrise, sunset) {
 
     const now = Math.floor(Date.now() / 1000);
-    document.body.classList.remove("day", "night", "error");
+    document.body.classList.remove("day", "night", "weather-error");
 
 
     if (now >= sunrise && now < sunset) {
