@@ -1,7 +1,7 @@
 {
   "name": "weather-app-secure",
   "main": "worker.js",
-  "compatibility_date": "2026-08-12",
+  "compatibility_date": "2026-08-11",
   "assets": {
     "directory": ".",
     "binding": "ASSETS"
