@@ -38,9 +38,8 @@ async function searchWeather() {
     }
 
 
-    const url =
-    `${API_URL}?city=${encodeURIComponent(city)}`;
-    //const url =`/weather?city=${encodeURIComponent(city)}`;
+    //const url =`${API_URL}?city=${encodeURIComponent(city)}`;
+    const url =`/weather?city=${encodeURIComponent(city)}`;
 
     info.innerHTML = `
     <li class="loading-message">
