@@ -11,6 +11,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="./favicon/android-chrome-512x512.png">
@@ -26,24 +28,49 @@
 
 </head>
 
-<body>
+<body class="weather-default">
+
 
     <main>
       
-        <h2>How's the weather?</h2>
+        <h2 class="h2">How's the weather?</h2>
 
         <div class="search-box">
-            <input type="search" placeholder="in what city?" pattern=""
-               id="city-input">
-
-            <button>Search🔍</button>  
+            <input type="search" placeholder="in what city?" id="cityInput" required>
+            <button id="searchButton">Search🔍</button>  
         </div>
 
-        <div class="info-box">
 
-            <ul id="info"></ul>
+    <div class="city-temperature">
+        <span class="city-name">City</span>
+        <span class="temperature"> °C</span>
+    </div><br>
 
-        </div>
+    <ul id="info">
 
-    </main>
+        <li>
+            <span>💧 Humidity</span>
+            <strong>%</strong>
+        </li>
+
+        <li>
+            <span>💨 Wind</span>
+            <strong> km/h</strong>
+        </li>
+
+        <li>
+            <span>🌡️ Feels like</span>
+            <strong>°C</strong><!DOCTYPE html>
+
+        </li>
+
+        <li>
+            <span>❔ Condition</span>
+            <strong>search</strong>
+        </li>
+
+    </ul>
+
+
+<script src="./script.js"></script>
 </body>
