@@ -32,6 +32,13 @@ async function searchWeather() {
 
     const url =`/weather?city=${encodeURIComponent(city)}`;
 
+    info.innerHTML = `
+    <li class="loading-message">
+        <span>⏳ Getting weather...</span>
+    </li>`;
+
+    searchButton.disabled = true;
+    searchButton.textContent = "Searching...";
 
     try {
 
@@ -50,6 +57,7 @@ async function searchWeather() {
             `;
 
             return;
+
         }
 
         const cityName = data.name;
@@ -105,7 +113,11 @@ async function searchWeather() {
             </li>
         `;
 
-    }
+    }finally {
+
+          searchButton.disabled = false;
+          searchButton.textContent = "Search 🔍";
+        }
 
 }
 

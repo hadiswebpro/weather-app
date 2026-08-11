@@ -225,6 +225,29 @@ body {
     background-image:
         url("./assets/weather/drizzle.webp");
 }
+
+.loading-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 80px;
+
+    padding: 20px;
+
+    background: var(--item-bg);
+
+    border: 1px solid var(--item-border);
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    backdrop-filter: blur(9px);
+}
 /* ========================================
    MAIN
 ======================================== */
