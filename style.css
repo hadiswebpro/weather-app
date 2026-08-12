@@ -17,7 +17,7 @@ body {
     padding: 40px 20px;
 
     font-family: "Inter", sans-serif;
-    color: #ffffff;
+    color: #f4f3f3;
 
     background-position: center;
     background-size: cover;
@@ -285,9 +285,15 @@ main {
     letter-spacing: -0.05em;
 
     text-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.3);
+        0 4px 15px rgba(0, 0, 0, 0.577);
 }
 
+.city-name,
+.temperature {
+    text-shadow:
+        0 2px 4px rgba(26, 26, 26, 0.576),
+        0 0 12px rgba(15, 14, 14, 0.663);
+}
 
 /* ========================================
    SEARCH BOX
