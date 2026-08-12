@@ -21,13 +21,9 @@ const weatherClasses = [
     "weather-error"
 ];
 
-//const isLocal =
-  //  location.hostname === "localhost" ||
-  //  location.hostname === "127.0.0.1";
+const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
 
-//const API_URL = isLocal
-  //  ? "https://weather-app-secure.hibech804.workers.dev/weather"
-   // : "/weather";
+const API_URL = isLocal ? "https://weather-app-secure.hibech804.workers.dev/weather" : "/weather";
 
 async function searchWeather() {
 
@@ -38,8 +34,8 @@ async function searchWeather() {
     }
 
 
-    //const url =`${API_URL}?city=${encodeURIComponent(city)}`;
-    const url =`/weather?city=${encodeURIComponent(city)}`;
+    const url =`${API_URL}?city=${encodeURIComponent(city)}`;
+    //const url =`/weather?city=${encodeURIComponent(city)}`;
 
     info.innerHTML = `
     <li class="loading-message">

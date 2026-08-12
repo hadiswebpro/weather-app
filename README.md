@@ -51,6 +51,7 @@ Each theme has its own background image, colors, buttons, information cards, and
 * Git & GitHub
 * Cloudflare Workers
 * Responsive Design
+* PWA
 
 ## 🔐 API Security
 
@@ -58,7 +59,7 @@ The OpenWeather API key is **not stored directly in the frontend code**.
 
 The project uses a **Cloudflare Worker** as a small API layer. The API key is stored as an encrypted secret in Cloudflare and is used by the Worker when requesting weather data.
 
-```text
+
 Browser
    ↓
 Cloudflare Worker
@@ -68,9 +69,22 @@ OpenWeather API
 Weather Data
    ↓
 Weather App
-```
+
 
 This was also an introduction to separating frontend code from sensitive API credentials.
+
+## PWA
+
+The project includes:
+
+- `manifest.json`
+- `sw.js`
+- PWA icons
+- Service Worker caching
+
+The application can be installed as a standalone app
+on supported devices.
+
 
 ## 📚 What I Learned
 
@@ -94,6 +108,7 @@ While building this project, I practiced:
 * Deploying a web project
 * Using Cloudflare Workers
 * Working with environment secrets
+
 
 ## 🚧 Current Learning Stage
 

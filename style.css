@@ -103,16 +103,18 @@ body {
 /* ---------- RAINY ---------- */
 
 .weather-rainy {
-    --main-color: #8fc5dd;
-    --button-color: #619bb8;
+  
+    --main-color: #8fd1b3;
 
-    --search-bg: rgba(75, 120, 145, 0.58);
+    --button-color: #4fa77d;
 
-    --info-bg: rgba(48, 77, 91, 0.62);
+    --search-bg: rgba(48, 118, 84, 0.55);
 
-    --item-bg: rgba(73, 112, 130, 0.56);
+    --info-bg: rgba(32, 82, 59, 0.63);
 
-    --item-border: rgba(185, 220, 232, 0.28);
+    --item-bg: rgba(55, 126, 91, 0.52);
+
+    --item-border: rgba(190, 235, 211, 0.30);
 
     background-image:
         url("./assets/weather/rainy.webp");
@@ -122,16 +124,18 @@ body {
 /* ---------- FOGGY ---------- */
 
 .weather-foggy {
-    --main-color: #c2ccd0;
-    --button-color: #9daeb4;
+  
+    --main-color: #c1d1c8;
 
-    --search-bg: rgba(150, 162, 167, 0.55);
+    --button-color: #8fae9d;
 
-    --info-bg: rgba(103, 114, 118, 0.58);
+    --search-bg: rgba(82, 108, 94, 0.55);
 
-    --item-bg: rgba(143, 153, 157, 0.50);
+    --info-bg: rgba(61, 79, 68, 0.60);
 
-    --item-border: rgba(235, 240, 242, 0.3);
+    --item-bg: rgba(96, 121, 105, 0.50);
+
+    --item-border: rgba(220, 235, 226, 0.30);
 
     background-image:
         url("./assets/weather/foggy.webp");
@@ -196,7 +200,7 @@ body {
 
 .weather-error {
     --main-color: #f3a6a6;
-    --button-color: #d98282;
+    --button-color: #c05151;
 
     --search-bg: rgba(145, 83, 83, 0.55);
 
@@ -586,11 +590,14 @@ main {
     }
 
     .h2 {
-        font-size: clamp(2.6rem, 8vw, 3.7rem);
+        font-size: clamp(2.7rem, 8vw, 3rem);
 
-        margin-bottom: 16px;
+        margin-bottom: 30px;
     }
 
+    .search-box{
+        margin-bottom: 40px;
+    }
     #info {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -620,7 +627,7 @@ main {
 
         margin-bottom: 28px;
 
-        line-height: 1.15;
+        line-height: 2;
     }
 
     .search-box {
@@ -628,7 +635,7 @@ main {
 
         padding: 6px;
 
-        margin-bottom: 12px;
+        margin-bottom: 50px;
 
         border-radius: 16px;
     }
@@ -661,6 +668,7 @@ main {
 
     .city-name {
         font-size: 1.4rem;
+        margin-bottom: 10px;
     }
 
     .temperature {
