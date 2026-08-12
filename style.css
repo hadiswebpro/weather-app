@@ -219,17 +219,7 @@ body {
 /* ---------- DRIZZLE ---------- */
 
 .weather-drizzle {
-    --main-color: #9fc9d8;
-
-    --button-color: #719faf;
-
-    --search-bg: rgba(91, 127, 141, 0.55);
-
-    --info-bg: rgba(55, 79, 88, 0.60);
-
-    --item-bg: rgba(82, 116, 128, 0.52);
-
-    --item-border: rgba(195, 225, 233, 0.30);
+    
 
     background-image:
         url("./assets/weather/drizzle.webp");
