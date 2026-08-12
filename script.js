@@ -22,7 +22,6 @@ const weatherClasses = [
 ];
 
 const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-
 const API_URL = isLocal ? "https://weather-app-secure.hibech804.workers.dev/weather" : "/weather";
 
 async function searchWeather() {
